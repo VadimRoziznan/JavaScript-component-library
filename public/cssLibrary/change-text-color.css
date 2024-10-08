@@ -1,0 +1,7 @@
+.change-text-color {
+    transition: color 0.3s ease; /* Указываем, что хотим анимировать изменение цвета */
+}
+
+.change-text-color:hover {
+    color: #856aa7;
+}

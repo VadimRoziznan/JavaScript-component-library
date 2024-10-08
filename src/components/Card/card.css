@@ -1,0 +1,76 @@
+/* Ensure box-sizing is applied to all elements */
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    min-height: 300px;
+    height: auto;
+    margin: 25px;
+    perspective: 1000px;
+    margin: 25px; /* Center the card in its container */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    transform-origin: center center; /* Ensure rotation around center */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backface-visibility: hidden; /* Hide back face when rotated */
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.no-flip {
+    display: inline-block; /* Allows the container to size itself to the content */
+}
+
+.language-css {
+    background: #fff !important;
+}
+
+/*.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #333;
+    font-size: 20px;
+}
+
+.copy-btn:hover {
+    color: #007BFF;
+}*/
+
