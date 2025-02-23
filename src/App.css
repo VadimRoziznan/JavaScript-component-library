@@ -1,7 +1,12 @@
 body {
   height: 100vh; /* растянуть на всю высоту страницы */
   margin: 0; /* убрать отступы */
-  background: linear-gradient(45deg, rgba(133, 106, 167, 0.3), rgba(69, 90, 150, 0.3), rgba(51, 62, 110, 0.3)); /* сделать фон полупрозрачным */
+  background: linear-gradient(
+    45deg,
+    rgba(133, 106, 167, 0.3),
+    rgba(69, 90, 150, 0.3),
+    rgba(51, 62, 110, 0.3)
+  ); /* сделать фон полупрозрачным */
   background-size: 100% 100%; /* растянуть фон на всю страницу */
 }
 
@@ -26,15 +31,17 @@ body {
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .container {
   display: flex;
-  height: auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 50px;
- }
+  flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+  justify-content: center; /* Центрирование карточек */
+  gap: 20px; /* Отступы между карточками */
+}

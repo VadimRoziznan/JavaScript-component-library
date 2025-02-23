@@ -1,0 +1,4 @@
+.broken-frame:hover {
+  outline: 2px dashed #3d1f15; /* Ширина, вид и цвет рамки */
+  outline-offset: -10px; /* Выводим рамку внутри элемента */
+}

@@ -1,0 +1,116 @@
+/* Настройки */
+.mask {
+  --uiMaskClipPath: var(--maskClipPath);
+  box-sizing: var(--maskBoxSizing, border-box);
+  display: var(--maskDisplay, inline-flex);
+  padding: var(--maskStrokeThickness, 3px);
+  clip-path: var(--uiMaskClipPath);
+  background-color: var(--maskStrokeColor, currentColor);
+  --maskStrokeColor: #34d6ff; /* Цвет рамки */
+  --maskStrokeThickness: 5px; /* Ширина рамки */
+  margin: 25px;
+}
+.mask-img {
+  max-width: 100%;
+  display: block;
+  clip-path: var(--uiMaskClipPath);
+}
+.mask,
+.mask-img {
+  transition: clip-path var(--maskAnimationDuration, 0.2s)
+    var(--maskAnimationTimingFunction, ease-out);
+}
+/* Первая рамка */
+.mask-one {
+  --maskClipPath: polygon(
+    0 10%,
+    10% 0,
+    90% 0,
+    100% 10%,
+    100% 90%,
+    90% 100%,
+    10% 100%,
+    0 90%
+  );
+}
+.mask-one-frame {
+  --maskAnimationDuration: 0.4s;
+}
+.mask-one:hover,
+.mask-one:focus {
+  --maskClipPath: polygon(
+    0 0,
+    100% 0,
+    100% 10%,
+    100% 100%,
+    90% 100%,
+    0% 100%,
+    0% 90%,
+    0% 10%
+  );
+}
+/* Вторая рамка */
+.mask-two {
+  --maskClipPath: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.mask-two-frame {
+  --maskAnimationDuration: 0.4s;
+}
+.mask-two:hover,
+.mask-two:focus {
+  --maskClipPath: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+}
+/* Третья рамка */
+.mask-three {
+  --maskClipPath: polygon(
+    0 10%,
+    10% 10%,
+    10% 0,
+    90% 0,
+    90% 10%,
+    100% 10%,
+    100% 90%,
+    90% 90%,
+    90% 100%,
+    10% 100%,
+    10% 90%,
+    0 90%
+  );
+}
+.mask-three-frame {
+  --maskAnimationDuration: 0.5s;
+}
+.mask-three:hover,
+.mask-three:focus {
+  --maskClipPath: polygon(
+    90% 0,
+    100% 0,
+    100% 10%,
+    100% 90%,
+    100% 100%,
+    90% 100%,
+    10% 100%,
+    0 100%,
+    0 90%,
+    0 10%,
+    0 0,
+    10% 0
+  );
+}
+/* Четвертая рамка */
+.mask-four {
+  --maskClipPath: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+}
+.mask-four:hover,
+.mask-four:focus {
+  --maskClipPath: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.items-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: row;
+  width: auto;
+  margin: 0 25px;
+}
